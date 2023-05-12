@@ -3,16 +3,17 @@
 //  
 
 // JavaScript
-// let name = "Mary";
+let name = "Mary";
 
-// function greetPeople(){
+function greetPeople(){
 
-//   let name = "Clause";
+  let name = "Clause";
 
-//   console.log(`Hello ${name}`)
+  console.log(`Hello ${name}`)
 
-// }
+}
 
-// greetPeople()
+greetPeople()
 
-output: Clause
+// output: Hello Clause
+// this is because the cope used is the function scope hence the closest initialization of name is used.
