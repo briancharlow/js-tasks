@@ -28,6 +28,22 @@ const user = {
   }
 };
 
-const { education: { degree } } = user;
+function findValueByKey(obj, targetKey) {
+  for (let key in obj) {
+    if (key === targetKey) {
+      return obj[key];
+    }
+    if (typeof obj[key] === 'object') {
+      const nestedValue = findValueByKey(obj[key], targetKey);
+      if (nestedValue !== undefined) {
+        return nestedValue;
+      }
+    }
+  }
+  return undefined;
+}
 
-console.log(degree);
+const targetKey = 'degree';
+const targetValue = findValueByKey(user, targetKey);
+
+console.log(targetValue);
